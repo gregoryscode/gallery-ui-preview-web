@@ -1,0 +1,231 @@
+<div class="home-container">
+    <div class="container">
+        <div class="header">
+            <div class="left">
+                <span class="title">Dashboard</span>
+            </div>
+        </div>
+        <div class="activities-content">
+            <div class="header-content">
+                <div class="left">
+                    <span class="title">Atividades recentes</span>
+                </div>
+                <div class="right">
+                    <button mat-flat-button (click)="loadData()">
+                        <mat-icon class="material-symbols-outlined" svgIcon="new_gallery_icon"
+                            iconPositionStart></mat-icon>
+                        Criar nova galeria</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="cards-first-row">
+                    <div class="card">
+                        <div class="header">
+                            <span class="title">Minhas galerias</span>
+                            <button mat-stroked-button>
+                                <mat-icon class="material-symbols-outlined" iconPositionEnd>arrow_forward</mat-icon>
+                                Ver todas as galerias</button>
+                        </div>
+                        <div [ngClass]="galleries ? 'content overflow' : 'content empty'">
+                            <div class="galleries" *ngIf="galleries">
+                                <div class="gallery mat-elevation-z4" *ngFor="let gallery of galleries">
+                                    <div class="gallery-image">
+                                        <img src="{{gallery.image}}" />
+                                    </div>
+                                    <div class="gallery-content">
+                                        <div class="top">
+                                            <div class="left">
+                                                <span class="name">{{gallery.name}}</span>
+                                                <span class="date">{{gallery.date}}</span>
+                                            </div>
+                                            <div class="right">
+                                                <span class="status">{{gallery.status}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="left">
+                                                <div class="stats-item">
+                                                    <mat-icon class="material-symbols-outlined">imagesmode</mat-icon>
+                                                    <span>{{gallery.imageCount}}</span>
+                                                </div> 
+                                                <div class="stats-item">
+                                                    <mat-icon class="material-symbols-outlined">download</mat-icon>
+                                                    <span>{{gallery.downloadCount}}</span>
+                                                </div> 
+                                                <div class="stats-item">
+                                                    <mat-icon class="material-symbols-outlined">favorite</mat-icon>
+                                                    <span>{{gallery.likeCount}}</span>
+                                                </div>
+                                                <div class="stats-item">
+                                                    <mat-icon class="material-symbols-outlined">chat_bubble</mat-icon>
+                                                    <span>{{gallery.noteCount}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="right">
+                                                <div class="see-gallery-button">
+                                                    <span>Ver galeria</span>
+                                                    <mat-icon class="material-symbols-outlined">arrow_forward</mat-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <app-empty-state-dashboard [title]="'Crie sua primeira galeria'"
+                                [subtitle]="'Aumente suas vendas com lindas galerias para seus clientes'"
+                                [button]="getCreateGalleryButton()" *ngIf="!galleries"></app-empty-state-dashboard>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="header">
+                            <span class="title">Acompanhar vendas</span>
+                            <button mat-raised-button [disabled]="!sales" [class.disabled]="!sales">
+                                <mat-icon class="material-symbols-outlined" iconPositionEnd>arrow_forward</mat-icon>
+                                Ver todas as vendas</button>
+                        </div>
+                        <div [ngClass]="sales ? 'content overflow' : 'content empty'" [class.blur]="blur">
+                            <div class="sales" *ngIf="sales">
+                                <div class="sale mat-elevation-z4" *ngFor="let sale of sales">
+                                    <div class="sale-image">
+                                        <img src="{{sale.image}}" />
+                                    </div>
+                                    <div class="sale-content">
+                                        <div class="top">
+                                            <div class="left">
+                                                <span class="customer">{{sale.description}}</span>
+                                                <span class="project">{{sale.project}}</span>
+                                            </div>
+                                            <div class="right">
+                                                <span class="date">{{sale.date}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="left">
+                                                <span class="price">Valor: {{toCurrency(sale.price)}}</span>
+                                            </div>
+                                            <div class="right">
+                                                <div class="see-sale-button">
+                                                    <span>Ver compra</span>
+                                                    <mat-icon class="material-symbols-outlined">arrow_forward</mat-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <app-empty-state-dashboard [title]="'Ative sua loja'"
+                                [subtitle]="'Configure sua loja para que seus clientes possam comprar produtos'"
+                                [button]="getSetupStoreButton()" *ngIf="!sales"></app-empty-state-dashboard>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards-second-row">
+                    <div class="card">
+                        <div class="header">
+                            <span class="title">Comentários</span>
+                            <button mat-stroked-button class="prime" (click)="blur = !blur">
+                                <mat-icon class="material-symbols-outlined" svgIcon="go_prime_icon" iconPositionStart></mat-icon>
+                                Go Prime</button>
+                        </div>
+                        <div [ngClass]="notes ? 'content overflow' : 'content empty'" [class.blur]="blur">
+                            <div class="notes" *ngIf="notes">
+                                <div class="note mat-elevation-z4" *ngFor="let note of notes">
+                                    <div class="note-image">
+                                        <img src="{{note.image}}" />
+                                    </div>
+                                    <div class="note-content">
+                                        <div class="top">
+                                            <div class="left">
+                                                <span class="customer">{{note.customer}}</span>
+                                                <span class="project">{{note.project}}</span>
+                                            </div>
+                                            <div class="right">
+                                                <span class="date">{{note.date}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="left">
+                                                <span class="description">{{note.description}}</span>
+                                            </div>
+                                            <div class="right">
+                                                <div class="see-note-button">
+                                                    <span>Ver comentário</span>
+                                                    <mat-icon class="material-symbols-outlined">arrow_forward</mat-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <app-empty-state-dashboard [title]="'Você ainda não recebeu comentários'"
+                                *ngIf="!notes"></app-empty-state-dashboard>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="header">
+                            <span class="title">Carteira</span>
+                            <button mat-raised-button [disabled]="!wallet" [class.disabled]="!wallet">
+                                <mat-icon class="material-symbols-outlined" iconPositionEnd>arrow_forward</mat-icon>
+                                Ver carteira</button>
+                        </div>
+                        <div [ngClass]="wallet ? 'content' : 'content empty'">
+                            <div class="wallet" *ngIf="wallet">
+                                <div class="item color mat-elevation-z4">
+                                    <div class="title">
+                                        <span>Saldo disponível</span>
+                                        <mat-icon svgIcon="info_icon"
+                                            matTooltip="Valor disponível de acordo com seu prazo de recebimento"
+                                            matTooltipPosition="right"
+                                            [matTooltipClass]="{'rounded-tooltip': true}"></mat-icon>
+                                    </div>
+                                    <div class="price">
+                                        <span>{{toCurrency(wallet.balance)}}</span>
+                                    </div>
+                                    <div class="withdraw">
+                                        <button mat-raised-button>Solicitar saque</button>
+                                    </div>
+                                </div>
+                                <div class="item mat-elevation-z4">
+                                    <div class="title">
+                                        <span class="small">A receber</span>
+                                        <mat-icon class="small" svgIcon="info_icon"
+                                            matTooltip="Valor já pago pelos seus clientes, mas ainda fora do prazo de recebimento."
+                                            matTooltipPosition="right"
+                                            [matTooltipClass]="{'rounded-tooltip': true}"></mat-icon>
+                                    </div>
+                                    <div class="price small">
+                                        <span class="small">{{toCurrency(wallet.receiving)}}</span>
+                                    </div>
+                                </div>
+                                <div class="item mat-elevation-z4">
+                                    <div class="title">
+                                        <span class="small">Em processamento</span>
+                                        <mat-icon class="small" svgIcon="info_icon"
+                                            matTooltip="Valor a caminho da sua conta" matTooltipPosition="right"
+                                            [matTooltipClass]="{'rounded-tooltip': true}"></mat-icon>
+                                    </div>
+                                    <div class="price small">
+                                        <span class="small">{{toCurrency(wallet.processing)}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <app-empty-state-dashboard [title]="'Ative sua conta'"
+                                [subtitle]="'Ative sua conta no Go image Pay para receber os valores das suas vendas'"
+                                [button]="getEnableAccountButton()" *ngIf="!wallet"></app-empty-state-dashboard>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="news-content">
+            <div class="header-content">
+                <div class="left">
+                    <span class="title">Dicas e novidades</span>
+                </div>
+            </div>
+            <div class="carousel" *ngIf="carousel">
+                <app-carousel [carousel]="carousel"></app-carousel>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+main {
+    min-height: 800px;
+}
+
+footer {
+    width: 100%;
+    /* position: absolute; */
+    bottom: 0;
+}
+
+.chat-icon {
+    position: fixed;
+    width: 51px;
+    height: 51px;
+    bottom: 16px;
+    right: 30px;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 1px 1px 5px #999;
+    z-index: 100;
+}
+
+.chat-icon mat-icon {
+    width: 51px;
+    height: 51px;
+}

@@ -1,0 +1,108 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 500px;
+    background-color: #FEFEFE;
+    padding: 32px 40px 40px 40px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.container .close {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 5px;
+}
+
+.container .close mat-icon {
+    height: 24px;
+    width: 24px;
+    font-size: 24px;
+    color: #4F5259;
+    cursor: pointer;
+}
+
+.container .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .header .title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 33.6px;
+    color: var(--dark-text-color);
+}
+
+.container .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 16px;
+}
+
+.container .content span.first {
+    font-size: 16px;
+    line-height: 21.6px;
+    text-align: center;
+    font-weight: 400;
+    color: #626C6C;
+    margin-bottom: 16px;
+}
+
+.container .content span.second {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21.6px;
+    text-align: center;
+    color: #626C6C;
+}
+
+.container .content .gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--primary-gray-color);
+    border-radius: 64px;
+    border-top-left-radius: 17px;
+    background-color: #F4F4F4;
+    padding: 40px;
+    margin-top: 24px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.container .content .gallery span {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--dark-text-color);
+}
+
+.container .content .gallery img {
+    margin-top: 24px;
+}
+
+.container .content .gallery button {
+    background-color: var(--accent-color);
+    height: 40px;
+    font-weight: 500;
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, .1);
+    font-family: "Montserrat", serif;
+    border-radius: 6px;
+    margin-top: 24px;
+    padding: 12px 16px 12px 16px;
+    letter-spacing: 0.5px;
+}
+
+.container .content .gallery button mat-icon {
+    width: 15px;
+    height: 15px;
+    font-size: 15px;
+    padding-right: 3px;
+}

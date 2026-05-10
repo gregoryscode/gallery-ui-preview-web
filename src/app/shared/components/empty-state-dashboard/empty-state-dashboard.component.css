@@ -1,0 +1,36 @@
+.empty-state-dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Montserrat", serif;
+}
+
+.empty-state-dashboard .title {
+    display: flex;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--dark-text-color);
+}
+
+.empty-state-dashboard .subtitle {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+    width: 265px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--dark-text-color);
+}
+
+.empty-state-dashboard button {
+    background-color: var(--accent-color);
+    width: 210px;
+    height: 40px;
+    font-weight: 500;
+    box-shadow: 2px 2px 4px 0 rgba(0,0,0,.1);
+    font-family: "Montserrat", serif;
+    border-radius: 6px;
+    margin-top: 16px;
+}

@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="close">
+        <mat-icon (click)="close()">close</mat-icon>
+    </div>
+    <div class="header">
+        <span class="title">Bem-vindo ao Go Image Gallery</span>
+    </div>
+
+    <div class="content">
+        <span class="first">Encante seus clientes com lindas galerias, onde eles podem fazer
+            seleções de fotos e compras extras.</span>
+        <span class="second">Vamos te guiar pela criação da sua primeira galeria. É só clicar no botão abaixo.</span>
+
+        <div class="gallery">
+            <span>Galeria</span>
+            <img src="/assets/img/img_welcome_dialog.png" />
+            <button mat-flat-button>
+                <mat-icon class="material-symbols-outlined" svgIcon="new_gallery_icon"
+                    iconPositionStart></mat-icon>
+                Criar primeira galeria</button>
+        </div>
+    </div>
+</div>

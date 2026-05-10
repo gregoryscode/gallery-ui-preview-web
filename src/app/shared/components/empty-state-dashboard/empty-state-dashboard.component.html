@@ -1,0 +1,8 @@
+<div class="empty-state-dashboard">
+    <span class="title">{{title}}</span>
+    <span class="subtitle" *ngIf="subtitle">{{subtitle}}</span>
+    <button mat-flat-button *ngIf="button">
+        <mat-icon class="material-symbols-outlined" [svgIcon]="registerSvgIcon(button)"
+            iconPositionStart></mat-icon>
+        {{button.text}}</button>
+</div>

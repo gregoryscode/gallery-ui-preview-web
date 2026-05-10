@@ -1,0 +1,22 @@
+<div class="carousel-container">
+    <div class="carousel" *ngIf="carousel">
+        <img [src]="currentCarousel?.image" />
+        <div class="content">
+            <div class="left">
+                <span class="title">{{currentCarousel?.title}}</span>
+                <div class="item">
+                    <mat-icon svgIcon="calendar_icon"></mat-icon><span>{{currentCarousel?.date}}</span>
+                </div>
+                <div class="item">
+                    <mat-icon svgIcon="map_pin_icon"></mat-icon><span>{{currentCarousel?.place}}</span>
+                </div>
+            </div>
+            <div class="right" *ngIf="currentCarousel?.buttonText">
+                <button mat-flat-button [class.disabled]="!currentCarousel?.buttonEnabled" [disabled]="!currentCarousel?.buttonEnabled">{{currentCarousel?.buttonText}}</button>
+            </div>
+        </div>
+    </div>
+    <div class="carousel-navigation">
+        <div class="dot" [class.selected]="currentCarouselIndex === i" *ngFor="let item of carousel; index as i" (click)="select(i)"></div>
+    </div>
+</div>

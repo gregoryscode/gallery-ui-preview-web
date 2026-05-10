@@ -1,0 +1,14 @@
+<div>
+    <header>
+        <app-toolbar></app-toolbar>
+    </header>
+    <main>
+        <router-outlet></router-outlet>
+    </main>
+    <footer>
+        <app-footer></app-footer>
+    </footer>
+</div>
+<a href="{{getWhatsAppChat()}}" class="chat-icon" target="_blank" *ngIf="getWhatsAppChat()">
+    <mat-icon svgIcon="chat_icon"></mat-icon>
+</a>

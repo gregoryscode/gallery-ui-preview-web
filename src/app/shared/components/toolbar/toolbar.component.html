@@ -1,0 +1,59 @@
+<div class="toolbar-container">
+    <div class="container-top">
+        <div class="left">
+            <img src="assets/img/img_logo.svg" class="logo">
+            <div class="buttons">
+                <div class="button" [class.selected]="selectedMenu === 'Dashboard'"
+                    [class.hover]="selectedMenu !== 'Dashboard'" (click)="selectedMenu = 'Dashboard'">
+                    <span>Dashboard</span>
+                </div>
+                <div class="button" [class.selected]="selectedMenu === 'Galerias'"
+                    [class.hover]="selectedMenu !== 'Galerias'" (click)="selectedMenu = 'Galerias'"
+                    [matMenuTriggerFor]="menuGallery">
+                    <span>Galerias</span><mat-icon>keyboard_arrow_down</mat-icon>
+                </div>
+                <mat-menu #menuGallery="matMenu" class="menu-gallery">
+                    <button mat-menu-item>Criar nova galeria</button>
+                    <button mat-menu-item>Ver minhas galerias</button>
+                    <button mat-menu-item>Predefinir galerias</button>
+                </mat-menu>
+                <div class="button" [class.selected]="selectedMenu === 'Loja'" [class.hover]="selectedMenu !== 'Loja'"
+                    (click)="selectedMenu = 'Loja'" [matMenuTriggerFor]="menuStore">
+                    <span>Loja</span><mat-icon>keyboard_arrow_down</mat-icon>
+                </div>
+                <mat-menu #menuStore="matMenu" class="menu-gallery">
+                    <button mat-menu-item>Acompanhar vendas</button>
+                    <button mat-menu-item>Configurar loja</button>
+                </mat-menu>
+                <div class="button" [class.selected]="selectedMenu === 'Meu site'"
+                    [class.hover]="selectedMenu !== 'Meu site'" (click)="selectedMenu = 'Meu site'">
+                    <span>Meu site</span><mat-icon>keyboard_arrow_down</mat-icon>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="menu">
+                <div class="input-search">
+                    <mat-form-field class="field" appearance="outline">
+                        <input matInput type="text" placeholder="O que você procura?" [(ngModel)]="search"
+                            autocomplete="off">
+                        <mat-icon matSuffix class="search-icon">search</mat-icon>
+                    </mat-form-field>
+                </div>
+                <mat-icon class="icon material-symbols-outlined" [matMenuTriggerFor]="menuHelp">help</mat-icon>
+                <mat-menu #menuHelp="matMenu" class="menu-gallery" xPosition="before">
+                    <button mat-menu-item>Começando uma galeria</button>
+                    <button mat-menu-item>Predefinindo suas galerias</button>
+                    <button mat-menu-item>Configurando sua loja</button>
+                    <button mat-menu-item class="item-talk-to-us"><mat-icon class="material-symbols-outlined"
+                            iconPositionStart>arrow_forward</mat-icon>
+                        Fale com a gente</button>
+                </mat-menu>
+                <mat-icon class="icon material-symbols-outlined">notifications</mat-icon>
+                <div class="account">
+                    <span>G</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
