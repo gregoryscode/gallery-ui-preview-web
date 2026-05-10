@@ -29,3 +29,7 @@ Gregory Perozzo.
 ## License
 
 Copyright (c) Gregory Perozzo. All rights reserved.
+
+This project is publicly available for portfolio and reference purposes only.
+
+See the [LICENSE](./LICENSE) file for details.
