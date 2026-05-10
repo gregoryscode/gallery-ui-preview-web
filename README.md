@@ -1,27 +1,31 @@
-# GregorysWeb
+# gallery-ui-preview-web
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
+![Built with](https://img.shields.io/badge/built%20with-Angular-DD0031)
+![Language](https://img.shields.io/badge/language-TypeScript-3178C6)
+![Powered by](https://img.shields.io/badge/powered%20by-energy%20drinks-ff69b4)
+![status](https://img.shields.io/badge/status-no%20longer%20maintained-red)
 
-## Development server
+**gallery-ui-preview-web** is an Angular-based web application created as a static UI preview for **[Go Image](https://www.goimage.com.br/)**, a platform focused on building a complete digital ecosystem for photographers and related-area professionals.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This project was originally developed as a technical and design evaluation to demonstrate my ability to follow stakeholder design requests, understand the proposed product flow, and translate business expectations into a functional front-end experience. After completing this test project, I was later hired to work on the original Go image project.
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Static Angular-based UI preview.
+- Interface based on stakeholder-provided design direction.
+- Gallery-focused visual experience.
+- User flow simulation for photography-related workflows.
+- Responsive layout structure.
+- Clean front-end organization for presentation and evaluation purposes.
 
-## Build
+## Project status
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+This project is no longer receiving updates. It remains available for reference, but no new features, optimizations, or UI enhancements are planned.
 
-## Running unit tests
+## Developers
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Gregory Perozzo.
 
-## Running end-to-end tests
+## License
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Copyright (c) Gregory Perozzo. All rights reserved.
