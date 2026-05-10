@@ -6,6 +6,7 @@ import { WelcomeDialogComponent } from 'src/app/shared/components/welcome-dialog
 import { Button } from 'src/app/shared/models/button';
 import { Carousel } from 'src/app/shared/models/carousel';
 import { Gallery } from 'src/app/shared/models/gallery';
+import { Note } from 'src/app/shared/models/note';
 import { Sale } from 'src/app/shared/models/sale';
 import { Wallet } from 'src/app/shared/models/wallet';
 
@@ -87,6 +88,7 @@ export class HomeComponent implements OnInit {
   currentCarouselPictureIndex: number = 0;
   galleries: Gallery[] | null = null;
   sales: Sale[] | null = null;
+  notes: Note[] | null = null;
   wallet: Wallet | null = null;
   blur: boolean = false;
 
